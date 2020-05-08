@@ -57,14 +57,14 @@ https://docs.microsoft.com/en-us/azure/cognitive-services/speech-service/quickst
 		# Invoke-RestMethod : The remote server returned an error: (429) Too Many Requests.
 		start-sleep 7
     
-    $Response = Invoke-WebRequest -Uri $constructed_url -Method POST -Headers $headers -Body $Body -OutFile $Filename -passthru
+    		$Response = Invoke-WebRequest -Uri $constructed_url -Method POST -Headers $headers -Body $Body -OutFile $Filename -passthru
 
-    # if request was successful return filename
-    if ($Response.statuscode -eq 200) {
-      $Filename
-    }
-    else {
-      Write-warning "ERROR: $Filename, HTTP: $Response.StatusDescription"
-    }
-  }
+    		# if request was successful return filename
+    		if ($Response.statuscode -eq 200) {
+      			$Filename
+    		}
+    		else {
+      			Write-warning "ERROR: $Filename, HTTP: $Response.StatusDescription"
+    		}
+  	}
 }
